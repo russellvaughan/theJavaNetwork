@@ -11,5 +11,23 @@ public class UserTest {
     User spike = new User("Spike");
     assertEquals(spike.getName(), expected);
     }
-    
+
+    @Test
+    public void userPublishesAMessage(){
+        String expected = "My first message";
+        User spike = new User("Spike");
+        spike.publish("My first message");
+        assertEquals(spike.timeline.get(0), expected);
+
+    }
+    @Test
+    public void userPublishesMultipleMessage(){
+        String expected = "My second message";
+        User spike = new User("Spike");
+        spike.publish("My first message");
+        spike.publish("My second message");
+        assertEquals(spike.timeline.get(1), expected);
+
+    }
+
 }
