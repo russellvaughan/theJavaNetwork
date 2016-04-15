@@ -58,16 +58,27 @@ public class UserTest {
 
     @Test
     public void userCanSubscribeToOtherUsersTimelines() {
-        List<String> expected = Arrays.asList("Leo's first message", "Nikesh's first message", "Spike's first message");
+        List<String> expected = Arrays.asList("Nikesh's first message", "Spike's first message");
         User leo = new User("Leo");
         User nikesh = new User("Nikesh");
         User spike = new User("Spike");
-        leo.publish("Leo's first message");
         nikesh.publish("Nikesh's first message");
         spike.publish("Spike's first message");
         leo.subscribe(nikesh);
         leo.subscribe(spike);
-        assertEquals(expected, leo.timeline);
+        assertEquals(expected, leo.subscriptions);
+    }
+    @Test
+    public void userCanViewSubscriptions() {
+        String expected = "Nikesh's first message\nSpike's first message";
+        User leo = new User("Leo");
+        User nikesh = new User("Nikesh");
+        User spike = new User("Spike");
+        nikesh.publish("Nikesh's first message");
+        spike.publish("Spike's first message");
+        leo.subscribe(nikesh);
+        leo.subscribe(spike);
+        assertEquals(expected, leo.viewSubscriptions());
     }
 
 }
