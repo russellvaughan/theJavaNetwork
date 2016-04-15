@@ -36,12 +36,23 @@ public class UserTest {
     }
 
     @Test
-    public void userCanViewOtherUsersTimeline(){
+    public void userCanViewTimeline(){
         List<String> expected = Arrays.asList("My first message", "My second message");
         User spike = new User("Spike");
         spike.publish("My first message");
         spike.publish("My second message");
         assertEquals(expected, spike.getTimeline() );
+
+    }
+
+    @Test
+    public void userCanViewOtherUsersTimeline(){
+        String expected = "My first message\nMy second message";
+        User nikesh = new User("Nikesh");
+        User spike = new User("Spike");
+        nikesh.publish("My first message");
+        nikesh.publish("My second message");
+        assertEquals(expected, spike.viewTimeline(nikesh) );
 
     }
 

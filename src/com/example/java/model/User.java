@@ -6,9 +6,8 @@ import java.util.List;
 public class User {
 
     public User() {}
-
     private String name;
-    private String user;
+    private String posts = "";
     public List<String> timeline = new ArrayList<>();
 
     public User(String name) {
@@ -25,6 +24,13 @@ public class User {
 
     public List<String> getTimeline(){
         return timeline;
+    }
+
+    public String viewTimeline(User user){
+        for (String message:user.getTimeline()) {
+            posts += message + "\n";
+        }
+    return posts.trim();
     }
 
 
