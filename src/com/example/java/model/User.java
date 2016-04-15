@@ -33,5 +33,10 @@ public class User {
     return posts.trim();
     }
 
+    public void subscribe(User user){
+        for (String message:user.getTimeline()) {
+            timeline.add(message);
+        }
+    }
 
 }
