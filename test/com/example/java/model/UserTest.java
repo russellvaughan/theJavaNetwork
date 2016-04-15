@@ -1,6 +1,11 @@
 package com.example.java.model;
 
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -9,7 +14,7 @@ public class UserTest {
     public void userHasAName() {
     String expected = "Spike";
     User spike = new User("Spike");
-    assertEquals(spike.getName(), expected);
+    assertEquals(expected, spike.getName());
     }
 
     @Test
@@ -17,7 +22,7 @@ public class UserTest {
         String expected = "My first message";
         User spike = new User("Spike");
         spike.publish("My first message");
-        assertEquals(spike.timeline.get(0), expected);
+        assertEquals(expected, spike.timeline.get(0));
 
     }
     @Test
@@ -26,8 +31,19 @@ public class UserTest {
         User spike = new User("Spike");
         spike.publish("My first message");
         spike.publish("My second message");
-        assertEquals(spike.timeline.get(1), expected);
+        assertEquals(expected, spike.timeline.get(1));
 
     }
+
+    @Test
+    public void userCanViewOtherUsersTimeline(){
+        List<String> expected = Arrays.asList("My first message", "My second message");
+        User spike = new User("Spike");
+        spike.publish("My first message");
+        spike.publish("My second message");
+        assertEquals(expected, spike.getTimeline() );
+
+    }
+
 
 }

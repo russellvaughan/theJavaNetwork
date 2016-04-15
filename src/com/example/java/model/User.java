@@ -8,6 +8,7 @@ public class User {
     public User() {}
 
     private String name;
+    private String user;
     public List<String> timeline = new ArrayList<>();
 
     public User(String name) {
@@ -21,4 +22,10 @@ public class User {
     public String getName() {
         return name;
     }
+
+    public List<String> getTimeline(){
+        return timeline;
+    }
+
+
 }
