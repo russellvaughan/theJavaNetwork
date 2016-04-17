@@ -9,7 +9,7 @@ public class User {
     private String name;
     private String subscribedPosts = "";
     public Timeline timeline = new Timeline();
-    public List<String> subscriptions = new ArrayList<>();
+    public Subscription subscriptions = new Subscription();
 
     public User(String name) {
         this.name = name;
@@ -32,14 +32,9 @@ public class User {
     }
 
     public void subscribe(User user){
-        for (String message:user.getTimeline()) {
-            subscriptions.add(message);
-        }
+        subscriptions.add(user);
     }
     public String viewSubscriptions() {
-        for (String message:subscriptions) {
-            subscribedPosts += message + "\n";
-        }
-        return subscribedPosts.trim();
+        return subscriptions.view();
     }
 }

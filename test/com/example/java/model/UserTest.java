@@ -66,7 +66,7 @@ public class UserTest {
         spike.publish("Spike's first message");
         leo.subscribe(nikesh);
         leo.subscribe(spike);
-        assertEquals(expected, leo.subscriptions);
+        assertEquals(expected, leo.subscriptions.list());
     }
     @Test
     public void userCanViewSubscriptions() {
