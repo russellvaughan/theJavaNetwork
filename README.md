@@ -21,7 +21,7 @@ $ git clone https://github.com/russellvaughan/theJavaNetwork
 - IntelliJ IDEA
 - JUnit (97% Test Coverage)
 
-###Example Code From View Subscriptions Users Stories
+###Example Code From View 'Subscription' User Story
 
 ```
  User leo = new User("Leo");
