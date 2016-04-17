@@ -33,7 +33,13 @@ $ git clone https://github.com/russellvaughan/theJavaNetwork
  leo.subscribe(spike);
  leo.viewSubscriptions());
 ```
+Console:
+```
+Nikesh: Nikesh's first message
+Spike: Spike's first message
 
+Process finished with exit code 0
+```
  
 ###Implemented User Stories
 ```
