@@ -22,7 +22,7 @@ public class UserTest {
         String expected = "My first message";
         User spike = new User("Spike");
         spike.publish("My first message");
-        assertEquals(expected, spike.timeline.get(0));
+        assertEquals(expected, spike.timeline.timeline.get(0));
 
     }
     @Test
@@ -31,7 +31,7 @@ public class UserTest {
         User spike = new User("Spike");
         spike.publish("My first message");
         spike.publish("My second message");
-        assertEquals(expected, spike.timeline.get(1));
+        assertEquals(expected, spike.timeline.timeline.get(1));
 
     }
 

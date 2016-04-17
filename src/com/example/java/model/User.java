@@ -7,9 +7,8 @@ public class User {
 
     public User() {}
     private String name;
-    private String posts = "";
     private String subscribedPosts = "";
-    public List<String> timeline = new ArrayList<>();
+    public Timeline timeline = new Timeline();
     public List<String> subscriptions = new ArrayList<>();
 
     public User(String name) {
@@ -24,15 +23,12 @@ public class User {
         return name;
     }
 
-    public List<String> getTimeline(){
-        return timeline;
+    protected List<String> getTimeline(){
+        return timeline.getTimeline();
     }
 
     public String viewTimeline(User user){
-        for (String message:user.getTimeline()) {
-            posts += message + "\n";
-        }
-    return posts.trim();
+        return timeline.view(user);
     }
 
     public void subscribe(User user){
