@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class SubscriptionTest {
     @Test
     public void userCanSubscribeToOtherUsersTimelines() {
-        List<String> expected = Arrays.asList("Nikesh's first message", "Spike's first message");
+        List<String> expected = Arrays.asList("Nikesh: Nikesh's first message", "Spike: Spike's first message");
         User leo = new User("Leo");
         User nikesh = new User("Nikesh");
         User spike = new User("Spike");
@@ -22,7 +22,7 @@ public class SubscriptionTest {
     }
     @Test
     public void userCanViewTheirSubscriptions() {
-        String expected = "Nikesh's first message\nSpike's first message";
+        String expected = "Nikesh: Nikesh's first message\nSpike: Spike's first message";
         User leo = new User("Leo");
         User nikesh = new User("Nikesh");
         User spike = new User("Spike");

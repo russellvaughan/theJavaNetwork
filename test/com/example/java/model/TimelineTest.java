@@ -21,7 +21,7 @@ public class TimelineTest {
 
     @Test
     public void userCanViewATimeline(){
-        String expected = "My first message\nMy second message";
+        String expected = "Nikesh: My first message\nNikesh: My second message";
         Timeline timeline = new Timeline();
         User nikesh = new User("Nikesh");
         User spike = new User("Spike");

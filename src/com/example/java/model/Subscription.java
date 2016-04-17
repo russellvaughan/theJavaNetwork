@@ -10,7 +10,7 @@ public class Subscription {
 
     public void add(User user){
         for (String message:user.getTimeline()) {
-            subscriptions.add(message);
+            subscriptions.add(user.getName() + ": " +  message);
         }
     }
 

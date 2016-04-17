@@ -47,7 +47,7 @@ public class UserTest {
 
     @Test
     public void userCanViewOtherUsersTimeline(){
-        String expected = "My first message\nMy second message";
+        String expected = "Nikesh: My first message\nNikesh: My second message";
         User nikesh = new User("Nikesh");
         User spike = new User("Spike");
         nikesh.publish("My first message");
@@ -58,7 +58,7 @@ public class UserTest {
 
     @Test
     public void userCanSubscribeToOtherUsersTimelines() {
-        List<String> expected = Arrays.asList("Nikesh's first message", "Spike's first message");
+        List<String> expected = Arrays.asList("Nikesh: Nikesh's first message", "Spike: Spike's first message");
         User leo = new User("Leo");
         User nikesh = new User("Nikesh");
         User spike = new User("Spike");
@@ -70,7 +70,7 @@ public class UserTest {
     }
     @Test
     public void userCanViewSubscriptions() {
-        String expected = "Nikesh's first message\nSpike's first message";
+        String expected = "Nikesh: Nikesh's first message\nSpike: Spike's first message";
         User leo = new User("Leo");
         User nikesh = new User("Nikesh");
         User spike = new User("Spike");

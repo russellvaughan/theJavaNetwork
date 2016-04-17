@@ -18,7 +18,7 @@ public class Timeline {
 
     public String view(User user){
         for (String message:user.getTimeline()) {
-            posts += message + "\n";
+            posts += user.getName() + ": " + message + "\n";
         }
         return posts.trim();
     }
