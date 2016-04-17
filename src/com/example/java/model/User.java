@@ -5,36 +5,40 @@ import java.util.List;
 
 public class User {
 
-    public User() {}
-    private String name;
-    private String subscribedPosts = "";
-    public Timeline timeline = new Timeline();
-    public Subscription subscriptions = new Subscription();
+  public User() {
+  }
 
-    public User(String name) {
-        this.name = name;
-    }
+  private String name;
 
-    public void publish(String message){
-        timeline.add(message);
-    }
+  public Timeline timeline = new Timeline();
 
-    public String getName() {
-        return name;
-    }
+  public Subscription subscriptions = new Subscription();
 
-    protected List<String> getTimeline(){
-        return timeline.getTimeline();
-    }
+  public User(String name) {
+    this.name = name;
+  }
 
-    public String viewTimeline(User user){
-        return timeline.view(user);
-    }
+  public void publish(String message) {
+    timeline.add(message);
+  }
 
-    public void subscribe(User user){
-        subscriptions.add(user);
-    }
-    public String viewSubscriptions() {
-        return subscriptions.view();
-    }
+  public String getName() {
+    return name;
+  }
+
+  protected List<String> getTimeline() {
+    return timeline.getTimeline();
+  }
+
+  public String viewTimeline(User user) {
+    return timeline.view(user);
+  }
+
+  public void subscribe(User user) {
+    subscriptions.add(user);
+  }
+
+  public String viewSubscriptions() {
+    return subscriptions.view();
+  }
 }

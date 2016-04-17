@@ -5,24 +5,25 @@ import java.util.List;
 
 public class Subscription {
 
-    public List<String> subscriptions = new ArrayList<>();
-    private String subscribedPosts = "";
+  public List<String> subscriptions = new ArrayList<>();
 
-    public void add(User user){
-        for (String message:user.getTimeline()) {
-            subscriptions.add(user.getName() + ": " +  message);
-        }
-    }
+  private String subscribedPosts = "";
 
-    public List<String> list(){
-        return  subscriptions;
+  public void add(User user) {
+    for (String message : user.getTimeline()) {
+      subscriptions.add(user.getName() + ": " + message);
     }
+  }
 
-    public String view(){
-        for (String message:subscriptions) {
-            subscribedPosts += message + "\n";
-        }
-        return subscribedPosts.trim();
+  public List<String> list() {
+    return subscriptions;
+  }
+
+  public String view() {
+    for (String message : subscriptions) {
+      subscribedPosts += message + "\n";
     }
+    return subscribedPosts.trim();
+  }
 
 }

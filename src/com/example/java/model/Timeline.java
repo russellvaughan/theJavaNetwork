@@ -5,21 +5,22 @@ import java.util.List;
 
 public class Timeline {
 
-    public List<String> timeline = new ArrayList<>();
-    private String posts = "";
+  public List<String> timeline = new ArrayList<>();
 
-    public List<String> getTimeline(){
-        return timeline;
-    }
+  private String posts = "";
 
-    public void add(String message){
-        timeline.add(message);
-    }
+  public List<String> getTimeline() {
+    return timeline;
+  }
 
-    public String view(User user){
-        for (String message:user.getTimeline()) {
-            posts += user.getName() + ": " + message + "\n";
-        }
-        return posts.trim();
+  public void add(String message) {
+    timeline.add(message);
+  }
+
+  public String view(User user) {
+    for (String message : user.getTimeline()) {
+      posts += user.getName() + ": " + message + "\n";
     }
+    return posts.trim();
+  }
 }
